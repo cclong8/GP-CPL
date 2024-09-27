@@ -2,8 +2,8 @@
 ### Installation
 
 ```
-conda create -n clipreid python=3.8
-conda activate clipreid
+conda create -n lreid python=3.8
+conda activate lreid
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=10.2 -c pytorch
 pip install yacs
 pip install timm
@@ -15,7 +15,7 @@ pip install regex
 
 ### Training
 
-if you want to run lifelong ReID training for Order 1, you need to modify the bottom of configs/person/vit_clipreid.yml to
+if you want to run lifelong ReID training for Order 1, you need to modify the bottom of configs/person/vit.yml to
 
 ```
 DATASETS:
@@ -43,8 +43,6 @@ CUDA_VISIBLE_DEVICES=0 python train.py --config_file configs/person/vit.yml
 ```
 
 ### Evaluation
-
-For example, if you want to test ViT-based CLIP-ReID for MSMT17
 
 ```
 CUDA_VISIBLE_DEVICES=0 python test.py --config_file configs/person/vit.yml TEST.WEIGHT 'your_trained_checkpoints_path/ViT-B-16_60.pth'
